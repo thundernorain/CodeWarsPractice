@@ -6,21 +6,19 @@ public class BackspacesInString {
 
         var result = new StringBuilder(string);
 
-        // While result string contains a sharp
-        while (result.indexOf("#") != -1) {
-            if (result.isEmpty()) break;
+        int i = 0;
+        while(i < result.length()){
+            if(result.charAt(i) == '#'){
+                result.deleteCharAt(i--);
 
-            var indexOfBackspace = result.indexOf("#");
+                if(result.isEmpty()) break;
 
-            //  Deleting sharp
-            result.deleteCharAt(indexOfBackspace);
+                if(i > -1) result.deleteCharAt(i--);
+            }
 
-            // Check if sharp is not the first char
-            if (indexOfBackspace == 0) continue;
-
-            //  Deleting char that was before sharp
-            result.deleteCharAt(indexOfBackspace - 1);
+            i++;
         }
+
 
         return result.toString();
     }

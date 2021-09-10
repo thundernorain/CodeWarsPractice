@@ -11,8 +11,8 @@ public class PlayingWithDigits {
             sum += Math.pow(num, pow + i);
         }
 
-        double result = (double)sum / (double)digit;
+        int result = sum / digit;
 
-        return (result % 1 == 0)? (int)result : -1;
+        return (result != 0)? result : -1;
     }
 }

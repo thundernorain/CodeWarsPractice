@@ -2,13 +2,15 @@ package kyu8.TwiceAsOld;
 
 public class TwiceAsOld {
     /**
-     * if error returns -1
+     * if error returns null
      */
-    public int calculate(int fathersAge, int sonsAge){
-        if(sonsAge >= fathersAge) return -1;
+    public String calculate(int fathersAge, int sonsAge) {
+        if (sonsAge >= fathersAge) return null;
 
-        var yearsWhenFatherBeOlderTwice = fathersAge - sonsAge*2;
+        var yearsWhenFatherBeOlderTwice = fathersAge - sonsAge * 2;
 
-        return fathersAge + yearsWhenFatherBeOlderTwice;
+        return (yearsWhenFatherBeOlderTwice > 0)
+                ? "Father be twice older in " + yearsWhenFatherBeOlderTwice + " years"
+                : "Father was twice older " + Math.abs(yearsWhenFatherBeOlderTwice) + " years ago";
     }
 }

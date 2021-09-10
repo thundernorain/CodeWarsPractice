@@ -9,5 +9,6 @@ public class Program {
         var twiceAsOld = new TwiceAsOld();
 
         System.out.println(twiceAsOld.calculate(30, 16));
+        System.out.println(twiceAsOld.calculate(32, 14));
     }
 }

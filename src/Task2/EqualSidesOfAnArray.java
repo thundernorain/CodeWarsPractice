@@ -4,19 +4,17 @@ public class EqualSidesOfAnArray {
     public int findIndex(int[] array){
         if(array.length == 0) return 0;
 
-        int sumOfAll = 0;
+        int sumOfRight = 0;
+        int sumOfLeft = 0;
+
         for(int val : array)
-            sumOfAll += val;
+            sumOfRight += val;
 
         for(int i = 0; i < array.length; i++){
-            int sumLeftSide = 0;
+                if(sumOfLeft == (sumOfRight - array[i])) return i;
 
-            for(int j = 0; j < i; j++){
-                sumLeftSide += array[j];
-            }
-
-            if(sumLeftSide == (sumOfAll - array[i] - sumLeftSide) )
-                return i;
+                sumOfLeft += array[i];
+                sumOfRight -= array[i];
         }
 
         return -1;

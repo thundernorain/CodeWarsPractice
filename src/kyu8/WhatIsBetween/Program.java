@@ -9,8 +9,14 @@ public class Program {
         var whatIsBetween = new WhatIsBetween();
 
         var resultArray = whatIsBetween.find(3, 10);
+        var resultArray2 = whatIsBetween.find(10, 33);
 
         for(var num : resultArray)
+            System.out.print(num + "\t");
+
+        System.out.println();
+
+        for(var num : resultArray2)
             System.out.print(num + "\t");
     }
 }
